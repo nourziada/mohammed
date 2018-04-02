@@ -11,8 +11,10 @@
 |
 */
 
-Route::get('/','WebSite\HomeController@index')->name('index');
-
+Route::group(['prefix' => LaravelLocalization::setLocale()], function()
+{
+	Route::get('/','WebSite\HomeController@index')->name('index');
+});
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

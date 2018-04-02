@@ -2,8 +2,7 @@
     <div class="inside">
         <div class="footer_logo"><img src="img/footer_logo.png" /></div>
         <h5>Published by</h5>
-        <p>Osoul Global Center in cooperation with the Australian Science and Research Academy.</p>
-        <p>Copyright © Osoul Global Center, <span id="year">2017</span> All rights reserved.</p>
+        <p>{!! nl2br($siteSettings->getTranslatedAttribute('footer_desc', LaravelLocalization::getCurrentLocale(), 'fallbackLocale')) !!}</p>
     </div>
 </footer>
 <!-- star button UP -->

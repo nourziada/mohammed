@@ -10,8 +10,8 @@
             <svg class="circles" viewbox="0 0 500 200">
                 <g id="first">
                     <path fill="none" stroke-linecap="round" stroke-width="0.5" stroke="#fff" stroke-dasharray="400,400" d="M100 60 A1 1 0 0 1 400 140
-           A1 1 0 0 1 100 60" />
-                    <text id="percentage" class="circ-text" text-anchor="middle" x="250" y="100" font-size="21px" fill="#fff">Loading ...</text>
+                    A1 1 0 0 1 100 60" />
+                    <text id="percentage" class="circ-text" text-anchor="middle" x="250" y="100" font-size="21px" fill="#fff">{{trans('main.loading')}} ...</text>
                     <!--                    <text id="verse" text-anchor="middle" font-size="12px" fill="#fff" x="250" y="290">"And We have not sent you but as a mercy to the worlds"</text>-->
                 </g>
             </svg>
@@ -23,11 +23,11 @@
             <div class="wrapper">
                 <div id="earth"></div>
                 <div class="content">
-                    <h3 class="animate delay01" data-animate="showFromLeft">The Prophet of Islam</h3>
-                    <h1 class="animate delay02" data-animate="showFromLeft">MUHAMMAD
+                    <h3 class="animate delay01" data-animate="showFromLeft">{{trans('main.prophet_islam')}}</h3>
+                    <h1 class="animate delay02" data-animate="showFromLeft">{{trans('main.mohammed')}}
                     <span class="pbuh ar animate delay03" data-animate="showFromRight">صلى الله عليه وسلم</span>
-                    <span class="pbuh en animate delay04" data-animate="showFromRight">PEACE BE UPON HIM</span></h1> <span class="line animate delay05" data-animate="showFromLeft"></span>
-                    <p class="animate delay06" data-animate="showFromLeft">"And We have not sent you but as a mercy to the worlds" <span>QURAN, 21:107 (THE PROPHETS)</span></p> <a href="" class="btn button--aylen animate delay07" data-animate="showFromRight"><span>DOWNLOAD THE BOOK  <em></em></span></a> </div>
+                    <span class="pbuh en animate delay04" data-animate="showFromRight">{{trans('main.sala')}}</span></h1> <span class="line animate delay05" data-animate="showFromLeft"></span>
+                    <p class="animate delay06" data-animate="showFromLeft">{{$header->getTranslatedAttribute('aya_quran', LaravelLocalization::getCurrentLocale(), 'fallbackLocale')}} <span>{{$header->getTranslatedAttribute('referance', LaravelLocalization::getCurrentLocale(), 'fallbackLocale')}}</span></p> <a href="{{$bookFile}}" class="btn button--aylen animate delay07" data-animate="showFromRight"><span>{{trans('main.download_book')}}  <em></em></span></a> </div>
                 <div class="h__nav">
                     <nav>
                         <ul>
@@ -53,30 +53,26 @@
             <div class="intro">
                 <div class="inside">
 <!--                    <object id="art01" class="art bottom animate" data-animate="showIn" data-delay="1" type="image/svg+xml" data="img/art.svg"></object>-->
-                                <img id="art01" class="art bottom animate" data-animate="showIn" data-delay="1" src="img/art.png" />
+                                <img id="art01" class="art bottom animate" data-animate="showIn" data-delay="1" src="{{asset('img/art.png')}}" />
 
                     <div class="main-hadith">
-                        <h2 class="animate" data-animate="showFromDown" data-delay="0.1">Prophet Muhammad</h2> <span class="animate" data-animate="showFromDown" data-delay="0.2">Peace be ubon him</span>
-                        <p class="animate" data-animate="showFromDown" data-delay="0.3">"My similitude in comparison with other prophets before me, is that of a man who built and completed a house except for one missing brick. When people see the house, they admire its beauty and say: How splendid the house will be if the missing brick is put in its place! So I am that brick, and I am the last of the Prophets."</p> <span class="ref animate" data-animate="showFromDown" data-delay="0.4">(Narrated by Bukhari 4.734, 4.735)</span> </div>
+                        <h2 class="animate" data-animate="showFromDown" data-delay="0.1">{{$belowHeader->getTranslatedAttribute('title', LaravelLocalization::getCurrentLocale(), 'fallbackLocale')}}</h2> <span class="animate" data-animate="showFromDown" data-delay="0.2">{{$belowHeader->getTranslatedAttribute('sub_title', LaravelLocalization::getCurrentLocale(), 'fallbackLocale')}}</span>
+                        <p class="animate" data-animate="showFromDown" data-delay="0.3">{{$belowHeader->getTranslatedAttribute('content', LaravelLocalization::getCurrentLocale(), 'fallbackLocale')}}</p> <span class="ref animate" data-animate="showFromDown" data-delay="0.4">{{$belowHeader->getTranslatedAttribute('referance', LaravelLocalization::getCurrentLocale(), 'fallbackLocale')}}</span> </div>
 <!--                    <object id="art02" class="art top animate" data-animate="showIn" data-delay="1" type="image/svg+xml" data="img/art.svg"></object>-->
-                                <img id="art02" class="art top animate" data-animate="showIn" data-delay="1" src="img/art.png" />
+                                <img id="art02" class="art top animate" data-animate="showIn" data-delay="1" src="{{asset('img/art.png')}}" />
 
                 </div>
             </div>
         </section>
         <section>
             <div class="row">
-                <div class="s__box" id="rev-1"> <img src="img/mecca.jpg" alt="MPBUH" /> </div>
+                <div class="s__box" id="rev-1"> <img src="{{Voyager::image($biographyHome->image)}}" alt="MPBUH" /> </div>
                 <div class="l__box float_right">
                     <div class="title animate" data-animate="showFromRight" data-delay="0.2"> <span class="left line"></span>
-                        <p>Biography</p>
-                        <h1>WHO IS<br />MUHAMMAD</h1> <span class="right line"><img src="img/pbuh.svg" alt="MPBUH" /></span> </div>
-                    <p class="animate" data-animate="showFromRight" data-delay="0.3">His name is Muhammad son of Abdullah son of Abdul-Muttalib (ancestry reaches back to the Prophet Ishmael son of Prophet Abraham).
-                        <br />
-                        <br /> He was from Bani-Hashim family (Bani-Hashim was from Quraysh, a tribe that was highly ranked in Arabia), Born in Mecca (Makkah) – Arabian Peninsula (currently in Saudi Arabia) on 20th - 22nd April, 570 CE 1 Approximately.
-                        <br />
-                        <br /> Muhammad Died in Madinah (about 400 km north of Makkah) on 6th June, 632 CE. (Approximately, he was 63 years old when he passed away)</p>
-                    <div class="revBtn animate" data-animate="showFromRight" data-delay="0.4"><a href="#" class="btn">Read More</a></div>
+                        <p>{{$biographyHome->getTranslatedAttribute('sub_title', LaravelLocalization::getCurrentLocale(), 'fallbackLocale')}}</p>
+                        <h1>{!! nl2br($biographyHome->getTranslatedAttribute('main_title', LaravelLocalization::getCurrentLocale(), 'fallbackLocale')) !!}</h1> <span class="right line"><img src="{{asset('img/pbuh.svg')}}" alt="MPBUH" /></span> </div>
+                    <p class="animate" data-animate="showFromRight" data-delay="0.3">{!! nl2br($biographyHome->getTranslatedAttribute('content', LaravelLocalization::getCurrentLocale(), 'fallbackLocale')) !!}</p>
+                    <div class="revBtn animate" data-animate="showFromRight" data-delay="0.4"><a href="#" class="btn">{{trans('main.read_more')}}</a></div>
                 </div>
             </div>
         </section>
@@ -153,29 +149,27 @@
                         <div id="rev-3" class="revBlock">
                             <div class="bg__section left">
                                 <div class="content">
-                                    <div class="animate content01 delay02" data-animate="showFromDown"> <img src="img/moral.png" /> <span class="hadith verse">
-                                            "You Are Of Great Moral Character"
-                                            <span class="refs">The Quran, 68:4</span> </span>
+                                    <div class="animate content01 delay02" data-animate="showFromDown"> <img src="{{Voyager::image($islamicHome->image)}}" /> <span class="hadith verse">
+                                            {{$islamicHome->getTranslatedAttribute('aya_quran', LaravelLocalization::getCurrentLocale(), 'fallbackLocale')}}
+                                            <span class="refs">{{$islamicHome->getTranslatedAttribute('referance', LaravelLocalization::getCurrentLocale(), 'fallbackLocale')}}</span> </span>
                                     </div>
                                 </div>
 <!--                                <object id="art03" class="art bottom animate" data-animate="showIn" data-delay="2" type="image/svg+xml" data="img/art.svg"></object>-->
-                                <img id="art03" class="art bottom animate" data-animate="showIn" data-delay="2" src="img/art.png" />
+                                <img id="art03" class="art bottom animate" data-animate="showIn" data-delay="2" src="{{asset('img/art.png')}}" />
 
                             </div>
                         </div>
                         <div class="l__box">
                             <div class="title animate" data-animate="showFromRight" data-delay="0.1"> <span class="left line"></span>
-                                <p>The Islamic Civilization</p>
-                                <h1>Values <br />and Morals</h1> <span class="right line">
-                                <object id="pbuh01" type="image/svg+xml" data="img/pbuh.svg"></object>
+                                <p>{{$islamicHome->getTranslatedAttribute('sub_title', LaravelLocalization::getCurrentLocale(), 'fallbackLocale')}}</p>
+                                <h1>{!! nl2br($islamicHome->getTranslatedAttribute('main_title', LaravelLocalization::getCurrentLocale(), 'fallbackLocale')) !!}</h1> <span class="right line">
+                                <object id="pbuh01" type="image/svg+xml" data="{{asset('img/pbuh.svg')}}"></object>
                                 
                                 
                                 
                                 </span> </div>
-                            <p class="animate" data-animate="showFromRight" data-delay="0.2">Muhammad didn’t know that he would be a Prophet: He Muhammad called for maintaining the right balance between materialism and spiritualism. He taught his followers that the needs of body and soul must be satisfied but in the right balance and in lawful ways.
-                                <br />
-                                <br /> He encouraged people to take religion as a motivator for a better way of life which adds value to their bodies and souls.</p>
-                            <div class="revBtn animate" data-animate="showFromRight" data-delay="0.3"><a href="#" class="btn">Read More</a></div>
+                            <p class="animate" data-animate="showFromRight" data-delay="0.2">{!! nl2br($islamicHome->getTranslatedAttribute('content', LaravelLocalization::getCurrentLocale(), 'fallbackLocale')) !!}</p>
+                            <div class="revBtn animate" data-animate="showFromRight" data-delay="0.3"><a href="#" class="btn">{{trans('main.read_more')}}</a></div>
                         </div>
                     </div>
                 </div>
@@ -190,7 +184,7 @@
                         </div>
                         <div id="rev-4" class="revBlock">
                             <div class="bg__section right">
-<!--                                <object id="art04" class="art top animate" data-animate="showIn" data-delay="3" type="image/svg+xml" data="img/art.svg"></object>-->
+
                                 <img id="art04" class="art top animate" data-animate="showIn" data-delay="3" src="img/art.png" />
 
                                 <div class="content">
@@ -219,33 +213,33 @@
             <div class="dual">
                 <div class="dual__inner" id="rev-5">
                     <div class="dual__half" data-overlay="6"> <span class="hadith verse">
-                            "And it was not possible for this Quran to be produced by other than Allah, but it is a confirmation of the revelation made before it and a detailed explanation of the Book (former scripture), without a doubt it is (a revelation) from the Lord of the worlds (entire Universe)."
-                           <span class="refs">The Quran, 10:37</span> </span>
+                            {{$miracleHome->getTranslatedAttribute('aya_quran_image', LaravelLocalization::getCurrentLocale(), 'fallbackLocale')}}
+                           <span class="refs">{{$miracleHome->getTranslatedAttribute('referance_image', LaravelLocalization::getCurrentLocale(), 'fallbackLocale')}}</span> </span>
                     </div>
                 </div>
                 <div class="dual__content bg__section no__margin d__dontent01">
                     <div class="dual__content__text">
                         <div class="title animate content03" data-animate="showFromUp" data-delay="0.2"> <span class="left line"></span>
-                            <p>The Miracle</p>
-                            <h1>God’s Miracle<br />to Muhammad</h1> <span class="right line"><img src="img/pbuh.svg" alt="MPBUH" /></span> </div>
-                        <p class="animate content03" data-animate="showFromDown" data-delay="0.3">Many scholars believe that Muhammad’s mission to convey God’s Message and bring people to monotheism was harder than the mission of many messengers and prophets before him. The main miracle he brought was the Quran, which was a book recited in original Arabic as a divine revelation from God.</p> <span class="hadith verse">
-                           "Will they not ponder on the Quran? If it had been from other than Allah they would have found therein much incongruity (inconsistency)."
-                           <span class="refs">The Quran, 4:82</span> </span>
-                        <div class="revBtn animate content03" data-animate="showFromDown" data-delay="0.4"><a href="#" class="btn">Read More</a></div>
+                            <p>{{$miracleHome->getTranslatedAttribute('sub_title', LaravelLocalization::getCurrentLocale(), 'fallbackLocale')}}</p>
+                            <h1>{!! nl2br($miracleHome->getTranslatedAttribute('main_title', LaravelLocalization::getCurrentLocale(), 'fallbackLocale')) !!}</h1> <span class="right line"><img src="{{asset('img/pbuh.svg')}}" alt="MPBUH" /></span> </div>
+                        <p class="animate content03" data-animate="showFromDown" data-delay="0.3">{!! nl2br($miracleHome->getTranslatedAttribute('content', LaravelLocalization::getCurrentLocale(), 'fallbackLocale')) !!}</p> <span class="hadith verse">
+                           {{$miracleHome->getTranslatedAttribute('aya_quran', LaravelLocalization::getCurrentLocale(), 'fallbackLocale')}}
+                           <span class="refs">{{$miracleHome->getTranslatedAttribute('referance', LaravelLocalization::getCurrentLocale(), 'fallbackLocale')}}</span> </span>
+                        <div class="revBtn animate content03" data-animate="showFromDown" data-delay="0.4"><a href="#" class="btn">{{trans('main.read_more')}}</a></div>
                     </div>
                 </div>
             </div>
         </section>
         <section class="bg__section no__margin">
 <!--            <object id="art03" class="art right animate" data-animate="showIn" data-delay="1" type="image/svg+xml" data="img/art.svg"></object>-->
-            <img id="art03" class="art right animate" data-animate="showIn" data-delay="1" src="img/art.png" />
+            <img id="art03" class="art right animate" data-animate="showIn" data-delay="1" src="{{asset('img/art.png')}}" />
 
             <div class="title animate" data-animate="showFromRight" data-delay="0.1"> <span class="left line"></span>
-                <p>Testimonials</p>
-                <h1>WHAT THEY<br />SAID ABOUT HIM</h1> <span class="right line">
-                        <object id="pbuh01" type="image/svg+xml" data="img/pbuh.svg"></object>
+                <p>{{$testimonialHome->getTranslatedAttribute('sub_title', LaravelLocalization::getCurrentLocale(), 'fallbackLocale')}}</p>
+                <h1>{!! nl2br($testimonialHome->getTranslatedAttribute('main_title', LaravelLocalization::getCurrentLocale(), 'fallbackLocale')) !!}</h1> <span class="right line">
+                        <object id="pbuh01" type="image/svg+xml" data="{{asset('img/pbuh.svg')}}"></object>
                         </span> </div>
-            <p class="animate" data-animate="showFromRight" data-delay="0.2">History has recorded Muhammad’s sublime and humane dealing with people. His call and teachings were based on amicability and fraternity. Adversity had no place in his conduct.</p>
+            <p class="animate" data-animate="showFromRight" data-delay="0.2">{!! nl2br($testimonialHome->getTranslatedAttribute('description', LaravelLocalization::getCurrentLocale(), 'fallbackLocale')) !!}</p>
             <div class="owl-carousel owl-theme testimonials" data-items="4" data-auto-play="false" data-navigation="true" data-single-item="false" data-slideSpeed="600" data-paginationSpeed="600" data-pagination="false">
                 <div class="item">
                     <div class="they">

@@ -1,33 +1,34 @@
 <header><span class="nav"><button><i class="fas fa-bars"></i></button></span>
     <span class="logo">
-        <img src="img/logo.png"
+        <img src="{{asset('img/logo.png')}}"
              alt="Muhammad PBUH"
              align="middle"/></span>
     <span class="search-btn"><button id="btn-search" class="btn--search"><i class="fas fa-search"></i></button></span>
 </header>
 
 
-<div class="search"> <img class="left" src="img/art_c.png" />
+<div class="search"> <img class="left" src="{{asset('img/art_c.png')}}" />
     <button id="btn-search-close" class="btn--search-close" aria-label="Close search form"><i class="fas fa-times"></i></button>
     <form class="search__form" action="">
-        <input class="search__input" name="search" type="search" placeholder="Search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" /> <span class="search__info">Hit enter to search or ESC to close</span> </form> <img class="right" src="img/art_c.png" /> </div>
-<div class="navigation"> <img class="left" src="img/art_c.png" />
+        <input class="search__input" name="search" type="search" placeholder="{{trans('main.search')}}" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" /> <span class="search__info">{{trans('main.search_hint')}}</span> </form> <img class="right" src="{{asset('img/art_c.png')}}" /> </div>
+
+<div class="navigation"> <img class="left" src="{{asset('img/art_c.png')}}" />
     <button id="btn-nav-close" class="btn--nav-close" aria-label="Close nav"><i class="fas fa-times"></i></button>
     <div class="scroll_cont">
         <div class="scroll">
             <div class="nav-inner">
                 <ul>
                     <li class="_nav-item animate showFromLeft active" id="main_page">
-                        <a href="index.php"> <span class="menu__item-name">Main Page</span></a>
+                        <a href="{{route('index')}}"> <span class="menu__item-name">{{trans('main.main_page')}}</span></a>
                         <div class="inner-menu main_page">
                             <div class="s__content">
-                                <h3>The Prophet of Islam</h3>
-                                <h1>MUHAMMAD
-                                    <span class="pbuh en">PEACE BE UPON HIM</span></h1>
-                                <p>"And We have not sent you but as a mercy to the worlds" <span>QURAN, 21:107 (THE PROPHETS)</span></p>
+                                <h3>{{trans('main.prophet_islam')}}</h3>
+                                <h1>{{trans('main.mohammed')}}
+                                    <span class="pbuh en">{{trans('main.sala')}}</span></h1>
+                                <p>{{$header->getTranslatedAttribute('aya_quran', LaravelLocalization::getCurrentLocale(), 'fallbackLocale')}} <span>{{$header->getTranslatedAttribute('referance', LaravelLocalization::getCurrentLocale(), 'fallbackLocale')}}</span></p>
                             </div>
                             <div class="languages">
-                                <h3>Select your language</h3>
+                                <h3>{{trans('main.select_lang')}}</h3>
                                 <ul>
                                     <li class="selected"><a href=""><span>EN</span></a></li>
                                     <li><a href=""><span>FR</span></a></li>
@@ -46,7 +47,8 @@
                         </div>
                     </li>
                     <li class="_nav-item animate showFromLeft delay01" id="testimonials">
-                        <a href="testimonials.php"> <span class="menu__item-name">Testimonials</span></a>
+                        <a href="testimonials.php"> <span class="menu__item-name">{{trans('main.testimonials')}}</span></a>
+
                         <div class="inner-menu testimonials">
                             <h2>Testimonials</h2>
                             <p>History has recorded Muhammad’s sublime and humane dealing with people. His call and teachings were based on amicability and fraternity. Adversity had no place in his conduct.</p> <a href="testimonials.php">Read More +</a> </div>
@@ -145,5 +147,5 @@
         </div>
     </div>
 
-    <img class="right" src="img/art_c.png" /> </div>
+    <img class="right" src="{{asset('img/art_c.png')}}" /> </div>
 

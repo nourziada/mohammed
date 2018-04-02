@@ -8,6 +8,6 @@ use TCG\Voyager\Traits\Translatable;
 
 class Header extends Model
 {
-	//use Translatable;
-    //protected $translatable = ['aya_quran', 'referance'];
+	use Translatable;
+    protected $translatable = ['aya_quran', 'referance'];
 }
