@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','WebSite\HomeController@index')->name('index');
 
 
 Route::group(['prefix' => 'admin'], function () {
