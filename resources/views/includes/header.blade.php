@@ -18,7 +18,7 @@
         <div class="scroll">
             <div class="nav-inner">
                 <ul>
-                    <li class="_nav-item animate showFromLeft active" id="main_page">
+                    <li class="_nav-item animate showFromLeft" id="main_page">
                         <a href="{{route('index')}}"> <span class="menu__item-name">{{trans('main.main_page')}}</span></a>
                         <div class="inner-menu main_page">
                             <div class="s__content">
@@ -47,33 +47,47 @@
                         </div>
                     </li>
                     <li class="_nav-item animate showFromLeft delay01" id="testimonials">
-                        <a href="testimonials.php"> <span class="menu__item-name">{{trans('main.testimonials')}}</span></a>
+                        <a href="{{route('testimonials')}}"> <span class="menu__item-name">{{trans('main.testimonials')}}</span></a>
 
                         <div class="inner-menu testimonials">
-                            <h2>Testimonials</h2>
-                            <p>History has recorded Muhammad’s sublime and humane dealing with people. His call and teachings were based on amicability and fraternity. Adversity had no place in his conduct.</p> <a href="testimonials.php">Read More +</a> </div>
+                            <h2>{{trans('main.testimonials')}}</h2>
+                            <p>{{ str_limit ($testimonialHome->getTranslatedAttribute('description', LaravelLocalization::getCurrentLocale(), 'fallbackLocale'),255) }}</p> <a href="{{route('testimonials')}}">{{trans('main.read_more')}} +</a> </div>
                     </li>
                     <li class="_nav-item animate showFromLeft delay02" id="HisCharacter">
-                        <a href="character.php"> <span class="menu__item-name">His character</span></a>
+                        <a href="{{route('character')}}"> <span class="menu__item-name">{{trans('main.character')}}</span></a>
                         <div class="inner-menu HisCharacter">
-                            <h2>His character</h2>
-                            <p>Muslims have no drawings or pictures for prophet Muhammad or the prophets before him. However, unlike the founders of the great faith traditions prior to his time, the Prophet Muhammad is much more a recognizable historical figure as his companions and family members described him very well and recorded many stories from his life for posterity.</p> <a href="character.php">Read More +</a> </div>
+                            <h2>{{trans('main.character')}}</h2>
+                            <p>{{ $characterSection->getTranslatedAttribute('description', LaravelLocalization::getCurrentLocale(), 'fallbackLocale') }}</p> <a href="{{route('character')}}">{{trans('main.read_more')}} +</a> </div>
                     </li>
-                    <li class="_nav-item animate showFromLeft delay03" id="biography"> <a href="biography.php"><span class="menu__item-name">Biography</span></a>
+                    
+                    <li class="_nav-item animate showFromLeft delay03" id="biography"> <a href="{{route('biography')}}"><span class="menu__item-name">{{trans('main.biography')}}</span></a>
                         <div class="inner-menu biography">
-                            <h2>Biography</h2>
-                            <p>His name is Muhammad son of Abdullah son of Abdul-Muttalib (ancestry reaches back to the Prophet Ishmael son of Prophet Abraham).</p> <a href="biography.php">Read More +</a> </div>
+                            <h2>{{trans('main.biography')}}</h2>
+                            <p>{{ $biographySection->getTranslatedAttribute('description', LaravelLocalization::getCurrentLocale(), 'fallbackLocale') }}</p> <a href="{{route('biography')}}">{{trans('main.read_more')}} +</a> </div>
                     </li>
-                    <li class="_nav-item animate showFromLeft delay04" id="prophecy"> <a href="prophecy.php"><span class="menu__item-name">Prophecy</span></a>
+                    <li class="_nav-item animate showFromLeft delay04 
+                        @if($active == 'prophecy.onegod' || $active == 'prophecy.message' || $active == 'revelation' || $active == 'prophecy.universality')
+                            active
+                        @endif
+                    
+                    " id="prophecy"> <a href="{{route('revelation')}}"><span class="menu__item-name">{{trans('main.prophecy')}}</span></a>
                         <div class="inner-menu prophecy">
-                            <h2>Prophecy</h2>
+                            <h2>{{trans('main.prophecy')}}</h2>
                             <ul class="nav">
-                                <li><a href="prophecy.php"><span>Muhammad and Divine revelation</span></a></li>
-                                <li><a href="The_message_of_islam.php"><span>The Message of Islam</span></a></li>
-                                <li><a href=""><span>Islam in brief</span></a></li>
-                                <li><a href=""><span>One God, One Message</span></a></li>
-                                <li><a href=""><span>How is Muhammad related to Abraham, Moses, Jesus and other prophets?</span></a></li>
-                                <li><a href=""><span>The universality of Islam (the Message)</span></a></li>
+                                <li><a href="{{route('revelation')}}"><span>{{trans('main.revelation')}}</span></a></li>
+                                
+                                <li><a href="{{route('prophecy.message')}}"><span>{{trans('main.prophecy_message')}}</span></a></li>
+                                
+                                <li class="
+                                @if($active == 'prophecy.onegod')
+                                    active
+                                @endif
+                                "    
+                                ><a href="{{route('prophecy.onegod')}}"><span>{{trans('main.one_god')}}</span></a></li>
+
+                                <!-- <li><a href=""><span>How is Muhammad related to Abraham, Moses, Jesus and other prophets?</span></a></li>-->
+
+                                <li><a href="{{route('prophecy.universality')}}"><span>{{trans('main.universality')}}</span></a></li>
                             </ul>
                         </div>
                     </li>

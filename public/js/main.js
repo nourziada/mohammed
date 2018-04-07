@@ -48,27 +48,6 @@ $(document).ready(function(){
 	wow.init();
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	//Testimonials slider initialization
 	$("#tslider").owlCarousel({
 		items : 1,
@@ -120,13 +99,6 @@ $(document).ready(function(){
 	function processing(hide, show){
 			$('#mc_submit i').removeClass(hide).addClass(show);
 	}
-
-
-
-
-
-
-
 
 	//Popup video
 	$('#play_video').click(function(e){

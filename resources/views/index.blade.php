@@ -32,13 +32,15 @@
                     <nav>
                         <ul>
                             <li>
-                                <a href="testimonials.php"> <span class="menu__item-name">Testimonials</span></a>
+                                <a href="{{route('testimonials')}}"> <span class="menu__item-name">{{trans('main.testimonials')}}</span></a>
                             </li>
                             <li>
-                                <a href=""> <span class="menu__item-name">His character</span></a>
+                                <a href="{{route('character')}}"> <span class="menu__item-name">{{trans('main.character')}}</span></a>
                             </li>
-                            <li><a href=""><span class="menu__item-name">Biography</span></a></li>
-                            <li><a href=""><span class="menu__item-name">Prophecy</span></a></li>
+                            <li><a href="{{route('biography')}}"><span class="menu__item-name">{{trans('main.biography')}}</span></a></li>
+                            
+                            <li><a href="{{route('revelation')}}"><span class="menu__item-name">{{trans('main.prophecy')}}</span></a></li>
+
                             <li><a href=""><span class="menu__item-name">Islamic civilization</span></a></li>
                             <li><a href=""><span class="menu__item-name">Women</span></a></li>
                             <li><a href=""><span class="menu__item-name">Human rights</span></a></li>

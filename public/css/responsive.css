@@ -58,8 +58,8 @@ body {
     section:not(#home),
     footer,
     .intro {
-        padding-left: 7% !important;
-        padding-right: 7% !important;
+        padding-left: 7% ;
+        padding-right: 7% ;
     }
 }
 @media (max-width:1300px) {
@@ -582,3 +582,7 @@ section.pt-0{
     padding-bottom: 0 !important;
 }
 /*body .container {width:auto !important}*/
+section.p-non{
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
